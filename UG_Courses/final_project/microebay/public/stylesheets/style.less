@@ -1,0 +1,80 @@
+@navbar-height: 8vh;
+
+.flex{
+  display: flex;
+}
+
+body {
+  margin: 0;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  .flex;
+  background: url("http://www.twitrcovers.com/wp-content/uploads/2012/09/Sky.jpg") no-repeat center center fixed;
+  background-size: cover;
+  #navbar{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: @navbar-height;
+    background-color: dimgrey;
+    align-items: center;
+    .flex;
+    #logo{
+      height: 7vh;
+      margin-left: 8px;
+      width: auto;
+    }
+    #button{
+      height: @navbar-height;
+      width: 10vh;
+      margin: 0 8px;
+      align-items: center;
+      justify-content: center;
+      .flex;
+    }
+    #login-button{
+      height: @navbar-height;
+      width: 10vh;
+      margin-right: 8px;
+      margin-left: auto;
+      align-items: center;
+      justify-content: center;
+      .flex;
+    }
+    #logout-button{
+      height: @navbar-height;
+      width: 10vh;
+      margin-right: 8px;
+      margin-left: auto;
+      align-items: center;
+      justify-content: center;
+      .flex;
+    }
+    #register-button{
+      height: @navbar-height;
+      width: 10vh;
+      margin-right: 8px;
+      align-items: center;
+      justify-content: center;
+      .flex;
+    }
+  }
+  #content{
+    height: calc(100vh - @navbar-height);
+    margin-top: @navbar-height;
+    flex: 1;
+  }
+  footer{
+    width: 100%;
+    background-color: rgba(245, 245, 220, 0.3);
+    position: fixed;
+    bottom: 0;
+    p{
+      margin-left: 50px;
+    }
+  }
+}
+
+a {
+  color: #00B7FF;
+}

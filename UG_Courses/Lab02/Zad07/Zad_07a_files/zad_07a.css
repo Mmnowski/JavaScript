@@ -1,0 +1,42 @@
+.bordered {
+  border: solid 1px black;
+}
+.flex {
+  display: flex;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
+html body {
+  width: 80%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  display: flex;
+}
+html body #banner {
+  width: 100%;
+  background-color: #022823;
+  height: 15%;
+  margin-bottom: 2%;
+  border: solid 1px black;
+}
+html body #menu {
+  background-color: #025823;
+  width: 20%;
+  height: 60%;
+  border: solid 1px black;
+  margin-left: 2%;
+  margin-right: 3%;
+}
+html body #tresc {
+  margin-left: 3%;
+  width: 70%;
+  height: 80%;
+  border: solid 1px black;
+}

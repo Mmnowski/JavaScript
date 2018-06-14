@@ -1,0 +1,61 @@
+@darkgrey: #022823;
+@lightgrey: #025823;
+@iterations: 3;
+
+.bordered {
+  border: solid 1px black;
+}
+.flex {
+  display: flex;
+}
+
+.box-loop (@i) when (@i > 0) {
+  .box:nth-child(@{i}){
+    width: 100px;
+    height: 100px;
+    & when (@i = 1) {
+      background-color: darkgrey;
+      align-self: flex-start;
+      justify-self: left;
+    }
+    & when (@i = 2) {
+      background-color: lightgrey;
+      align-self: center;
+      justify-self: center;
+    }
+    & when (@i = 3) {
+      background-color: #DCDCDC;
+      align-self: flex-end;
+      justify-self: right;
+    }
+    .flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: white;
+  }
+  .box-loop(@i - 1);
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  body {
+    height: 100%;
+    width: 100%;
+    #outer {
+      //justify-content: center;                                                                                        a)
+      //align-items: center;                                                                                            a)
+      height: 100%;
+      justify-content: space-between;
+      .flex;
+      //flex-direction: column;                                                                                         b)
+      .box-loop (@iterations);
+    }
+  }
+}

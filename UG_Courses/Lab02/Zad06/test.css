@@ -1,0 +1,86 @@
+.bordered {
+  border: solid 1px black;
+}
+.bordered-top {
+  border-top: solid 1px black;
+}
+.bordered-bottom {
+  border-bottom: solid 1px black;
+}
+.bordered-left {
+  border-left: solid 1px black;
+}
+.bordered-right {
+  border-right: solid 1px black;
+}
+.flex {
+  display: flex;
+}
+* {
+  box-sizing: border-box;
+}
+#okno {
+  margin: 0px auto;
+  flex-direction: column;
+  display: flex;
+  border: solid 1px black;
+}
+#okno #naglowek {
+  width: 100%;
+  justify-content: center;
+  background-color: #DCDCDC;
+  margin: 0px auto;
+  display: flex;
+  border-bottom: solid 1px black;
+}
+#okno #naglowek a {
+  margin-top: 10px;
+  justify-content: center;
+  display: flex;
+}
+#okno #belka {
+  padding: 3px;
+  width: 100%;
+  background-color: #BDC2BD;
+  display: flex;
+  border-bottom: solid 1px black;
+}
+#okno #menu_i_tresc {
+  display: flex;
+}
+#okno #menu_i_tresc #menu {
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+#okno #menu_i_tresc #menu .el_menu {
+  background: #DCDCDC;
+  margin-top: 1px;
+  font-size: 15px;
+  width: 60%;
+  padding: 2px 0 auto;
+  border: solid 1px black;
+  display: flex;
+}
+#okno #menu_i_tresc #menu .el_menu a {
+  text-align: center;
+  color: black;
+}
+#okno #menu_i_tresc #menu .el_menu a:link,
+#okno #menu_i_tresc #menu .el_menu a:visited {
+  color: black;
+  text-decoration: none;
+}
+#okno #menu_i_tresc #tresc {
+  flex: 4;
+  padding: 20px;
+  border-left: solid 1px black;
+}
+#okno #stopka {
+  background-color: #BDC2BD;
+  justify-content: center;
+  padding: 5px;
+  display: flex;
+  border-top: solid 1px black;
+}

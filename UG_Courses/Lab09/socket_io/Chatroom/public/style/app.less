@@ -1,0 +1,128 @@
+@userlist-width:250px;
+
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+.bordered {
+  border: solid 1px black;
+}
+
+body { 
+  font: 13px Helvetica, Arial; 
+  display: flex;
+  overflow-y:hidden;
+  overflow-x:hidden;
+  #content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    #roomcontainer{
+      height: 5vh;
+      width: 100%;
+      display: flex;
+      .bordered;
+      #roomlist{
+        display: flex;
+        #room{
+          width: 100px;
+          height: 100%;
+          line-height: 5vh;
+          text-align: center;
+          background-color: #eee;
+          font-size: 15px;
+          margin: 0 4px;
+        }
+      }
+      #addroom{
+        display: flex;
+        width: 5vh;
+        height: 5vh;
+        justify-content: center;
+        align-items: center;
+        .bordered;
+        p{
+          font-size: 25px;
+        }
+      }
+    }
+    #textbox-container{
+      .bordered;
+      height: 90vh;
+      width: 100%;
+      overflow: auto;
+      #textbox {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li{
+          padding: 5px 10px;
+          &:nth-child(odd) {
+            background-color: #eee;
+          }
+        }
+      }
+    }
+    #interface {
+      .bordered;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 5vh;
+      background-color: darkslategrey;
+      #text{
+        height: 80%;
+        width: 90%;
+      }
+      #send{
+        height: 80%;
+        padding: 0 10px;
+      }
+    }
+  }
+  #userlist {
+    margin-top: -1px; 
+    .bordered;
+    display: flex;
+    flex-direction: column;
+    width: @userlist-width;
+    min-width: @userlist-width;
+    #users {
+      .bordered;
+      height:95vh;
+      display: flex;
+      flex-direction: column;
+      div{
+        margin-top: 0;
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+        &:nth-child(odd) {
+            background-color: #eee;
+          }
+      }
+    }
+    #connect-box{
+      .bordered;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-right: 5px;
+      height: 5vh;
+      background-color: darkslategrey; 
+      #open {
+        height: 80%;        
+        width: 40%;
+        padding: 0 10px;
+      }
+      #close{
+        height: 80%;
+        width: 40%;        
+        padding: 0 10px;
+      }                 
+    }
+  }
+}

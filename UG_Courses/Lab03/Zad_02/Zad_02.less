@@ -1,0 +1,45 @@
+@darkgrey: #022823;
+@lightgrey: #025823;
+
+.bordered {
+  border: solid 1px black;
+}
+.flex {
+  display: flex;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  #all{
+    .flex;
+    height: 100vh;
+    #menu{
+      min-width: 200px;
+      .flex;
+      background-color: darkgrey;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 5px;
+      p{
+        padding-top: 5px;
+        border-top-left-radius: 16px;
+        text-align: center;
+        width: 80%;
+        height: 30px;
+        background-color: #DCDCDC;
+        box-shadow: -2px -1px 5px 0px rgba(0,0,0,0.75);
+        margin-bottom: 5px;
+      }
+    }
+    #main{
+      padding-left: 40px;
+      background-color: lightgrey;
+      p{
+        width:95%;
+      }
+    }
+  }
+}

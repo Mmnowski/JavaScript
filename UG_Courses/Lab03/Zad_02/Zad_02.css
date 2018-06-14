@@ -1,0 +1,38 @@
+.bordered {
+  border: solid 1px black;
+}
+.flex {
+  display: flex;
+}
+* {
+  box-sizing: border-box;
+}
+body #all {
+  display: flex;
+  height: 100vh;
+}
+body #all #menu {
+  min-width: 200px;
+  display: flex;
+  background-color: darkgrey;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5px;
+}
+body #all #menu p {
+  padding-top: 5px;
+  border-top-left-radius: 16px;
+  text-align: center;
+  width: 80%;
+  height: 30px;
+  background-color: #DCDCDC;
+  box-shadow: -2px -1px 5px 0px rgba(0, 0, 0, 0.75);
+  margin-bottom: 5px;
+}
+body #all #main {
+  padding-left: 40px;
+  background-color: lightgrey;
+}
+body #all #main p {
+  width: 95%;
+}

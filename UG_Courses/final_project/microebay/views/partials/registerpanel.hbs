@@ -1,0 +1,32 @@
+<div id="panel">
+  <div id="errors">
+  {{#if errors}}
+    {{#each errors}} 
+    <div id="error">
+      {{msg}}
+    </div>
+    {{/each}} 
+  {{/if}}
+  </div>
+  <form method="POST" action="/users/register">
+    <div id="formgroup">
+      <input type="text" id="formname" placeholder="Name" name="name">
+    </div>
+    <div id="formgroup">
+      <input type="text" id="formsurname" placeholder="Surname" name="surname">
+    </div>
+    <div id="formgroup">
+      <input type="email" id="formemail" placeholder="E-mail" name="email">
+    </div>
+    <div id="formgroup">
+      <input type="text" id="formusername" placeholder="Username" name="username">
+    </div>
+    <div id="formgroup">
+      <input type="password" id="formpassword" placeholder="Password" name="password">
+    </div>
+    <div id="formgroup">
+      <input type="password" id="formrepassword" placeholder="Confirm Password" name="password2">
+    </div>
+    <button type="submit" id="button">Register</button>
+  </form>
+</div>

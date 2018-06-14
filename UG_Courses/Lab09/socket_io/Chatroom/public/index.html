@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sockets.io chat example</title>
+  <meta charset="UTF-8">
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/skrypt.js"></script>
+  <link rel="stylesheet" media="screen" href="./style/app.css" />
+</head>
+
+<body>
+  <div id="content">
+    <div id="roomcontainer">
+      <div id="roomlist">
+        <div id="room">General</div>
+      </div>
+      <div id="addroom"><p>+</p></div>
+    </div>
+    <div id="textbox-container">
+      <ul id="textbox" />
+    </div>
+    <div id="interface">
+      <input id="text" autocomplete="off">&nbsp;
+      <input id="send" type="button" value="SEND">
+    </div>
+    <p id="message"></p>
+  </div>
+  <div id="userlist">
+    <div id="users">
+
+    </div>
+    <div id="connect-box">
+      <img id="status" src="img/bullet_red.png" width="35">
+      <input id="open" type="button" value="Połącz">
+      <input id="close" type="button" value="Rozłącz">
+    </div>
+  </div>
+</body>
+
+</html>

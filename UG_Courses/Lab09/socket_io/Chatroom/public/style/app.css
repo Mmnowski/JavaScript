@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.bordered {
+  border: solid 1px black;
+}
+body {
+  font: 13px Helvetica, Arial;
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+body #content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+body #content #roomcontainer {
+  height: 5vh;
+  width: 100%;
+  display: flex;
+  border: solid 1px black;
+}
+body #content #roomcontainer #roomlist {
+  display: flex;
+}
+body #content #roomcontainer #roomlist #room {
+  width: 100px;
+  height: 100%;
+  line-height: 5vh;
+  text-align: center;
+  background-color: #eee;
+  font-size: 15px;
+  margin: 0 4px;
+}
+body #content #roomcontainer #addroom {
+  display: flex;
+  width: 5vh;
+  height: 5vh;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px black;
+}
+body #content #roomcontainer #addroom p {
+  font-size: 25px;
+}
+body #content #textbox-container {
+  border: solid 1px black;
+  height: 90vh;
+  width: 100%;
+  overflow: auto;
+}
+body #content #textbox-container #textbox {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+body #content #textbox-container #textbox li {
+  padding: 5px 10px;
+}
+body #content #textbox-container #textbox li:nth-child(odd) {
+  background-color: #eee;
+}
+body #content #interface {
+  border: solid 1px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 5vh;
+  background-color: darkslategrey;
+}
+body #content #interface #text {
+  height: 80%;
+  width: 90%;
+}
+body #content #interface #send {
+  height: 80%;
+  padding: 0 10px;
+}
+body #userlist {
+  margin-top: -1px;
+  border: solid 1px black;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  min-width: 250px;
+}
+body #userlist #users {
+  border: solid 1px black;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+}
+body #userlist #users div {
+  margin-top: 0;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+}
+body #userlist #users div:nth-child(odd) {
+  background-color: #eee;
+}
+body #userlist #connect-box {
+  border: solid 1px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 5px;
+  height: 5vh;
+  background-color: darkslategrey;
+}
+body #userlist #connect-box #open {
+  height: 80%;
+  width: 40%;
+  padding: 0 10px;
+}
+body #userlist #connect-box #close {
+  height: 80%;
+  width: 40%;
+  padding: 0 10px;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    {{#if title}} {{title}} {{else}} μBay {{/if}}
+  </title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  {{{_sections.head}}}
+</head>
+
+<body>
+  <div id="navigation">
+    <div id="navbar">
+      <img id="logo" src="../assets/mu.png" />
+      <div id="button">
+        <p>Auctions</p>
+      </div>
+      <div id="button">
+        <p>Messages</p>
+      </div>
+      {{#if user}}
+      <div id="logout-button">
+        <p>Logout</p>
+      </div>
+      {{else}}
+      <div id="login-button">
+        <p>Login</p>
+      </div>
+      <div id="register-button">
+        <p>Register</p>
+      </div>
+      {{/if}}
+    </div>
+  </div>
+  <div id="content">
+    {{#if success_msg}}
+    <div id="success">{{success_msg}}</div>
+    {{/if}}
+
+    {{#if error_msg}}
+    <div id="alert">{{error_msg}}</div>
+    {{/if}}
+
+    {{#if error}}
+    <div id="alert">{{error}}</div>
+    {{/if}}
+
+    {{{body}}}
+  </div>
+  <footer>
+    {{{_sections.footer}}}
+  </footer>
+</body>
+
+</html>

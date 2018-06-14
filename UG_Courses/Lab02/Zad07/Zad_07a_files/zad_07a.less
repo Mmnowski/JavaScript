@@ -1,0 +1,48 @@
+@darkgrey: #022823;
+@lightgrey: #025823;
+
+
+.bordered {
+  border: solid 1px black;
+}
+.flex {
+  display: flex;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  body {
+    width: 80%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    .flex;
+    #banner {
+      width: 100%;
+      background-color: @darkgrey;
+      height: 15%;
+      margin-bottom: 2%;
+      .bordered;
+    }
+    #menu {
+      background-color: @lightgrey;
+      width: 20%;
+      height: 60%;
+      .bordered;
+      margin-left: 2%;
+      margin-right: 3%;
+    }
+    #tresc {
+      margin-left: 3%;
+      width: 70%;
+      height: 80%;
+      .bordered
+    }
+  }
+}
