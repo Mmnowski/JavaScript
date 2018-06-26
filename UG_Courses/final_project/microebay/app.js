@@ -100,7 +100,7 @@ app.io = io;
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var auctionsRouter = require('./routes/auctions');
+var auctionsRouter = require('./routes/auctions')(io);
 var profileRouter = require('./routes/profile');
 var messagesRouter = require('./routes/messages')(io);
 

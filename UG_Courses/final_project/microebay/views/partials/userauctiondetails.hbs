@@ -11,29 +11,21 @@
       {{auction.description}}
     </div>
     <div id="bidding-info">
-      {{#if is_owner}} Current bid: {{auction.bid}} {{#if is_editable}}
-      <div id="auction-edit" data-id="{{auction.id}}">
-        Edit
-      </div>
-      <div id="auction-start" data-id="{{auction.id}}" data-auc="{{auction.id}}">
-        Start auction
-      </div>
-      {{/if}} {{else}} {{#if is_finished}} This auction has already finished {{else}} {{#if is_logged}} Current bid: {{auction.bid}}
-      <form method="POST" action="/auctions/{{auction.id}}">
+      Current bid: {{auction.bid}}
+      <form method="POST" action="/profile/current/{{auction.id}}">
         <div id="formgroup">
-          <input type="number" id="bid-form" placeholder="0" step="0.01" min="{{bid}}" name="bid">
+          <input type="number" id="bid-form" placeholder="0" step="0.01" min="1" name="bid">
         </div>
         <button type="submit" id="bid-button" data-auc="{{auction.id}}">Bid</button>
       </form>{{#if is_bidable}} Buy now for {{auction.buynowprice}}:
-      <form method="POST" action="/auctions/{{auction.id}}">
+      <form method="POST" action="/profile/current/{{auction.id}}">
         <button type="submit" id="buy-button" data-id="{{auction.buynowprice}}" data-auc="{{auction.id}}">Buy</button>
       </form>
-      {{/if}}
       <div id="auction-contact" data-id="{{auction.owner}}">
         Message owner
       </div>
-      {{else}} You need to log in to bid on an auction. {{/if}} {{/if}} {{/if}}
+      {{/if}}
     </div>
   </div>
-  {{else}} boi you done goofed {{/if}}
+  {{else}} Something went wrong {{/if}}
 </div>

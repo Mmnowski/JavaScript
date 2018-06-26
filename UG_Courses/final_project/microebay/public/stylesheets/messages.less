@@ -30,15 +30,42 @@
     height: 80%;
     width: 60%;
     background-color: rgba(230, 230, 250, 0.6);
-    .flex
+    .flex;
+    flex-direction: column;
     #chat-window {
       width: 100%;
-      height: 80%;      
+      height: 100%;
       flex-direction: column;
       .flex;
+      #chatbox {
+        height: 80%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li {
+          padding: 5px 10px;
+          &:nth-child(odd) {
+            background-color: #eee;
+          }
+        }
+      }
     }
     #chat-actions {
-      align-self: flex-end;
+      #text {
+        height: 10%;
+        width: 80%;
+      }
+      #send {
+        height: 10%;
+        padding: 0 10px;
+      }
+    }
+    #load-messages {
+      width: 100%;
+      height: fit-content;
+      padding: 5px 0;
+      text-align: center;
+      background-color: aqua;
     }
   }
 }

@@ -13,6 +13,6 @@ $(document).ready(function () {
   })
   $("#auction-list").on("click", "#auction-details", (e) => {
     var auctionID = $(e.target).attr('data-id');
-    location.href = "/auctions/" + auctionID;
+    location.href = "/profile/current/" + auctionID;
   })
 });

@@ -13,6 +13,9 @@ var AuctionSchema = mongoose.Schema({
   buynowprice: {
     type: Number
   },
+  bidable: {
+    type: Boolean
+  },
   image: {
     type: String
   },

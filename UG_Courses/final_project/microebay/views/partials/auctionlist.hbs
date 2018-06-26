@@ -1,17 +1,22 @@
 <div id="auctions">
   <div id="auction-list">
     {{#if auction_list}} {{#each auction_list}}
-    <div id="auction">
+    <div id="{{this.id}}" class="auction">
       <img src="{{this.image}}" width="150" height="150">
       <div id="auction-description">
         <h2>{{this.name}}</h2>
         <p>{{this.description}}</p>
       </div>
       <div id="auction-actions">
+        <div id="auction-status">
+          Auction status:<br/>{{this.state}}
+        </div>
         <div id="auction-details" data-id="{{this.id}}">
           Details
         </div>
-        Current bid: {{this.bid}}
+        <div id="bid-text">
+          Current bid:<br/>{{this.bid}}
+        </div>
       </div>
     </div>
     {{/each}} {{else}}
