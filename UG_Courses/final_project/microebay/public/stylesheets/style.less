@@ -1,6 +1,5 @@
 @navbar-height: 8vh;
-
-.flex{
+.flex {
   display: flex;
 }
 
@@ -11,7 +10,7 @@ body {
   .flex;
   background: url("http://www.twitrcovers.com/wp-content/uploads/2012/09/Sky.jpg") no-repeat center center fixed;
   background-size: cover;
-  #navbar{
+  #navbar {
     position: fixed;
     width: 100%;
     top: 0;
@@ -19,12 +18,15 @@ body {
     background-color: dimgrey;
     align-items: center;
     .flex;
-    #logo{
+    #logo {
       height: 7vh;
       margin-left: 8px;
       width: auto;
     }
-    #button{
+    #logo:hover {
+      cursor: pointer;
+    }
+    .button {
       height: @navbar-height;
       width: 10vh;
       margin: 0 8px;
@@ -32,44 +34,53 @@ body {
       justify-content: center;
       .flex;
     }
-    #login-button{
-      height: @navbar-height;
-      width: 10vh;
-      margin-right: 8px;
-      margin-left: auto;
-      align-items: center;
-      justify-content: center;
-      .flex;
+    .button:hover {
+      background-color: darkgray;
+      cursor: pointer;
     }
-    #logout-button{
-      height: @navbar-height;
-      width: 10vh;
-      margin-right: 8px;
+    #user-panel {
       margin-left: auto;
-      align-items: center;
-      justify-content: center;
       .flex;
-    }
-    #register-button{
-      height: @navbar-height;
-      width: 10vh;
-      margin-right: 8px;
-      align-items: center;
-      justify-content: center;
-      .flex;
+      .right-button {
+        height: @navbar-height;
+        width: 10vh;
+        margin-right: 8px;
+        align-items: center;
+        justify-content: center;
+        .flex;
+      }
+      .right-button:hover {
+        background-color: darkgray;
+        cursor: pointer;
+      }
     }
   }
-  #content{
+  #alert {
+    .flex;
+    margin: 10px auto 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 40px;
+    background-color: rgba(228, 86, 60, 0.8);
+    border-radius: 5px;
+  }
+  #content {
     height: calc(100vh - @navbar-height);
     margin-top: @navbar-height;
+    overflow: hidden;
     flex: 1;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    .flex;
   }
-  footer{
+  footer {
     width: 100%;
     background-color: rgba(245, 245, 220, 0.3);
     position: fixed;
     bottom: 0;
-    p{
+    p {
       margin-left: 50px;
     }
   }

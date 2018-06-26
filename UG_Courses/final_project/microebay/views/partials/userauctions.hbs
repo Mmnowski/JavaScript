@@ -1,0 +1,35 @@
+<div id="user-panel">
+  <div id="user-navigation">
+    <div id="user-main" class="nav-button">Profile</div>
+    <div id="user-auctions" class="nav-button">Your auctions</div>
+    <div id="user-current" class="nav-button">Current auctions</div>
+    <div id="user-finished" class="nav-button">Finished auctions</div>
+  </div>
+  <div id="user-content">
+    <div id="user-info">
+      <div id="auctions">
+        <div id="auction-list">
+          {{#if auction_list}} {{#each auction_list}}
+          <div id="auction">
+            <img src="{{this.image}}" width="150" height="150">
+            <div id="auction-description">
+              <h2>{{this.name}}</h2>
+              <p>{{this.description}}</p>
+            </div>
+            <div id="auction-actions">
+              <div id="auction-details" data-id="{{this.id}}">
+                Details
+              </div>
+              Current bid: {{this.bid}}
+            </div>
+          </div>
+          {{/each}} {{else}}
+          <div id="empty">
+            Nothing to show.
+          </div>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

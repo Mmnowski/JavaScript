@@ -1,0 +1,39 @@
+<div id="auction-info">
+  {{#if auction}}
+  <div id="main-info">
+    <div id="auction-title">
+      {{auction.name}}
+    </div>
+    <img src="{{auction.image}}" width="250" height="250">
+  </div>
+  <div id="detailed-info">
+    <div id="auction-description">
+      {{auction.description}}
+    </div>
+    <div id="bidding-info">
+      {{#if is_owner}} Current bid: {{auction.bid}} {{#if is_editable}}
+      <div id="auction-edit" data-id="{{auction.id}}">
+        Edit
+      </div>
+      <div id="auction-start" data-id="{{auction.id}}">
+        Start auction
+      </div>
+      {{/if}} {{else}} {{#if is_finished}} This auction has already finished {{else}} {{#if is_logged}} Current bid: {{auction.bid}}
+      <form method="POST" action="/auctions/{{auction.id}}">
+        <div id="formgroup">
+          <input type="number" id="formname" placeholder="0" name="bid">
+        </div>
+        <button type="submit" id="button">Bid</button>
+      </form>
+      Buy now for {{auction.buynowprice}}:
+      <form method="POST" action="/auctions/{{auction.id}}">
+        <button type="submit" id="button">Buy</button>
+      </form>
+      <div id="auction-contact" data-id="{{auction.owner}}">
+        Message owner
+      </div>
+      {{else}} You need to log in to bid on an auction. {{/if}} {{/if}} {{/if}}
+    </div>
+  </div>
+  {{else}} boi you done goofed {{/if}}
+</div>

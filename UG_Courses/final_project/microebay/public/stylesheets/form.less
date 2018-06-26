@@ -1,16 +1,20 @@
-#logocontainer{
+#logocontainer {
   display: flex;
   justify-content: center;
   width: 100%;
   margin: 100px 0;
-  img{
+  img {
     height: 150px;
     width: auto;
   }
 }
 
-#panel{
-  margin-top: 200px;
+#panel {
+  position: absolute;
+  top: 40%;
+  left:0;
+  right: 0;
+  height: fit-content;
   background: rgba(230, 230, 250, 0.6);
   width: fit-content;
   margin-left: auto;
@@ -19,4 +23,18 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+#errors {
+  height: fit-content;
+  margin-top: 50px;
+  #error {
+    display: flex;
+    margin-top: 3px;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    background-color: rgba(228, 86, 60, 0.4);
+    border-radius: 2px;
+  }
 }

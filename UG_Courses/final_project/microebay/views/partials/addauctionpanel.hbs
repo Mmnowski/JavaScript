@@ -1,0 +1,37 @@
+<div id="panel">
+  <form method="POST" action="/auctions/add">
+    <div id="formgroup">
+      <input type="text" id="formname" placeholder="Auction title" name="name">
+    </div>
+    <div id="formgroup">
+      <input type="text" id="formdescription" placeholder="Auction description" name="description">
+    </div>
+    <div id="formgroup">
+      <input type="number" id="formbid" step="0.01" min="1.00" placeholder="Minimum bid" name="bid">
+    </div>
+    <div id="formgroup">
+      <input type="number" id="formbuynow" step="0.01" min="1.00" placeholder="Buy now price" name="buynow">
+    </div>
+    <div id="formgroup">
+      <select id="formlength" name="length">
+        <option value="min">2 minutes (DEV ONLY)</option>
+        <option value="one">1 day</option>
+        <option value="three">3 days</option>
+        <option value="seven">7 days</option>
+        <option value="ten">10 days</option>
+      </select>
+    </div>
+    <div id="formgroup">
+      Start auction immediately
+      <input type="checkbox" id="formstart" name="start" value="true">
+    </div>
+    <button type="submit" id="button">Add auction</button>
+  </form>
+  <div id="errors">
+    {{#if errors}} Error: {{#each errors}}
+    <div id="error">
+      {{msg}}
+    </div>
+    {{/each}} {{/if}}
+  </div>
+</div>

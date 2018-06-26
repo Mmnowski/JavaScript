@@ -1,0 +1,59 @@
+.flex {
+  display: flex;
+}
+
+#auction-info {
+  width: 80%;
+  height: 80%;
+  margin: 5%;
+  padding: 5%;
+  flex-direction: column;
+  background-color: rgba(230, 230, 250, 0.6);
+  .flex;
+  #main-info {
+    .flex;
+    #auction-title {
+      font-size: 50px;
+      margin: 0 auto;
+      padding-top: 20px;
+    }
+    img {
+      float: right;
+      min-width: 250px;
+    }
+  }
+  #detailed-info {
+    margin-top: 15px;
+    .flex;
+    #auction-description {
+      margin: 0 auto;
+    }
+    #bidding-info {
+      width: 250px;
+      min-width: 250px;
+    }
+    form {
+      margin-bottom: 15px;
+    }
+    #auction-edit {
+      background-color: aqua;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin-top: 5px;
+      width: fit-content;
+    }
+    #auction-edit:hover {
+      cursor: pointer;
+    }
+    #auction-start {
+      background-color: aqua;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin-top: 5px;
+      width: fit-content;
+    }
+    #auction-start:hover {
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,91 @@
+.flex {
+  display: flex;
+}
+
+#user-panel {
+  .flex;
+  height: 100%;
+  #user-navigation {
+    background-color: dimgrey;
+    width: 260px;
+    min-width: 260px;
+    .flex;
+    flex-direction: column;
+    align-items: center;
+    .nav-button {
+      .flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+      width: 100%;
+      cursor: pointer;
+    }
+    .nav-button:hover {
+      background-color: darkgray;
+    }
+  }
+  #user-content {
+    margin: 0 auto;
+    padding-top: 20px;
+    width: 100%;
+    #user-info {
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      .flex;
+      #auctions {
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+        #auction-list {
+          align-items: center;
+          flex-direction: column;
+          width: 100%;
+          height: 100%;
+          flex-direction: column;
+          .flex;
+          #auction {
+            margin-top: 20px;
+            width: 70%;
+            min-height: 150px;
+            max-height: 150px;
+            background-color: rgba(230, 230, 250, 0.6);
+            .flex;
+            #auction-description {
+              margin-left: 40px;
+              p {
+                overflow: hidden;
+                position: relative;
+                line-height: 1.2em;
+                max-height: 3.6em;
+                text-align: justify;
+                margin-right: -1em;
+                padding-right: 1em;
+              }
+            }
+            #auction-actions {
+              .flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+              width: 200px;
+              min-width: 200px;
+              margin-left: auto;
+              #auction-details {
+                background-color: aqua;
+                padding: 5px 10px;
+                border-radius: 5px;
+                margin-bottom: 5px;
+              }
+              #auction-details:hover {
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

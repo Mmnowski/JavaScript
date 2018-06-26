@@ -7,12 +7,27 @@ var User = require('../models/user')
 var expressValidator = require('express-validator');
 router.use(expressValidator());
 
+function ensureAuthenticated(req, res, next) {
+  if (req.isAuthenticated())
+    return next();
+  else
+    res.redirect('/users/login')
+};
+
 router.get('/register', function(req, res, next) {
-  res.render('register', {title: 'Register'});
+  if (!req.user) {
+    res.render('register', {title: 'Register'});
+  } else {
+    res.redirect('../profile/')
+  }
 });
 
 router.get('/login', function (req, res, next) {
-  res.render('login', {title: 'Login'});
+  if (!req.user){
+    res.render('login', {title: 'Login'});
+  } else {
+    res.redirect('../profile/')
+  }
 });
 
 router.post('/register', function (req, res, next) {
@@ -25,7 +40,6 @@ router.post('/register', function (req, res, next) {
 
   req.checkBody('name', 'Name is required').notEmpty();
   req.checkBody('surname', 'Surname is required').notEmpty();
-  req.checkBody('email', 'E-mail is required').notEmpty();
   req.checkBody('email', 'Invalid e-mail').isEmail();
   req.checkBody('username', 'Username is required').notEmpty();
   req.checkBody('password', 'Password is required').notEmpty();
@@ -54,7 +68,7 @@ router.post('/register', function (req, res, next) {
       }
     });
   }
-});-
+});
 
 passport.use(new LocalStrategy(
   function (username, password, done) {
@@ -93,7 +107,7 @@ router.post('/login',
     res.redirect('/');
   });
 
-  router.get('/logout', function (req, res) {
+  router.get('/logout', ensureAuthenticated, function (req, res) {
     req.logout();
 
     req.flash('succes_msg', 'You are logged out');

@@ -10,6 +10,9 @@ var lessMiddleware = require('less-middleware');
 var logger = require('morgan');
 var exphbs = require('express-handlebars');
 var flash = require('connect-flash');
+var MongoStore = require('connect-mongo')(session);
+var socketio = require('socket.io');
+var passportsocketio = require('passport.socketio');
 
 
 var mongo = require('mongodb')
@@ -17,8 +20,6 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/microbay');
 var db = mongoose.connection;
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 
 var app = express();
 
@@ -42,10 +43,19 @@ app.use(cookieParser());
 app.use(lessMiddleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
+const sessionSecret = 'okres godowy chomika wynosi trzy miesiace';
+const sessionKey = 'express.sid';
+const store = new MongoStore({
+  url: 'mongodb://localhost/microbay',
+  ttl: 600
+});
+
 app.use(session({
-  secret: 'okres godowy chomika wynosi trzy miesiace',
+  key: sessionKey,
+  secret: sessionSecret,
   saveUninitialized: true,
-  resave: true
+  resave: true,
+  store: store
 }));
 
 app.use(passport.initialize());
@@ -79,7 +89,25 @@ app.use(function (req, res, next) {
   next();
 });
 
+var io = socketio();
+io.use(passportsocketio.authorize({
+  cookieParser: cookieParser,
+  secret: sessionSecret,
+  store: store,
+  key: sessionKey
+}));
+app.io = io;
+
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+var auctionsRouter = require('./routes/auctions');
+var profileRouter = require('./routes/profile');
+var messagesRouter = require('./routes/messages')(io);
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/auctions', auctionsRouter);
+app.use('/profile', profileRouter);
+app.use('/messages', messagesRouter);
 
 module.exports = app;
